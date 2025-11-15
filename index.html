@@ -1,246 +1,591 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <meta name="google-site-verification" content="P6dQ4MvH2A7SxjOhBnrQRCPH99P0pR5OugqaAH4BKyE" />
-    <meta property="og:description" content="Welcome to the website of Kaiser Hamid">
+    <meta property="og:description"
+          content="Personal website of S M Sakif Shahriyar – Lecturer in Civil Engineering and transportation engineering researcher focusing on traffic safety, computer vision, and urban freight logistics.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Welcome to the personal website of Kaiser Hamid, showcasing his achievements and projects.">
-    <meta name="author" content="Kaiser Hamid">
-    <!--favicon-->
-    <link rel="icon" type="image/png" href="assets/imgs/Double T 4C.png">
-    <title>Kaiser Hamid</title>
-    <!-- font icons -->
+    <meta name="description"
+          content="Personal website of S M Sakif Shahriyar, showcasing his research, projects, and teaching in transportation engineering and machine learning.">
+    <meta name="author" content="S M Sakif Shahriyar">
+
+    <!-- Favicon (update this to your own image) -->
+    <link rel="icon" type="image/png" href="assets/imgs/sakif.png">
+
+    <title>S M Sakif Shahriyar</title>
+
+    <!-- Icons & CSS -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap + Steller main styles -->
     <link rel="stylesheet" href="assets/css/steller.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+
     <style>
-        /* CSS code to make images responsive on mobile view */
+        /* Basic responsive image handling */
         img {
             max-width: 100%;
             height: auto;
         }
 
-        /* Custom spacing for mobile and desktop views */
-        .custom-row {
-            display: flex;
-            flex-wrap: wrap;
+        /* Layout: left sidebar + right content */
+        .main-layout {
+            margin-top: 5rem; /* space below navbar */
+            padding-top: 1rem;
         }
 
-        .custom-row > div {
-            margin-bottom: 20px;
+        .profile-sidebar {
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .06);
+            background-color: #ffffff;
+            position: sticky;
+            top: 80px; /* below navbar */
         }
 
-        /* CSS for stacking in mobile view */
-        @media only screen and (max-width: 767px) {
-            .stack {
-                flex-direction: column;
-            }
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
         }
 
-        /* Icon styling for education section */
-        .education-icon {
-            margin-right: 8px;
-            color: #000;
+        .profile-title {
+            margin-bottom: 0.3rem;
         }
 
-        /* Remove bullet points only from the Education list */
-        .education-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .education-list li {
-            padding-bottom: 10px; /* Space between items */
-        }
-
-        /* Fix for separate lines in Education */
-        .education-program {
-            display: block;
-            font-weight: bold;
-        }
-
-        .education-university {
-            display: block;
+        .profile-tagline {
+            font-size: 0.95rem;
             color: #555;
+        }
+
+        .profile-contact {
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+        }
+
+        .profile-contact a {
+            word-break: break-all;
+        }
+
+        .buttons .btn {
+            margin-right: 0.3rem;
+        }
+
+        .socials .social-item {
+            margin: 0 0.25rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar-section-title {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .sidebar-list {
+            padding-left: 1.1rem;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Right column content */
+        .content-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .content-section p {
+            font-size: 0.98rem;
+        }
+
+        /* Project cards */
+        .project-card {
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .06);
+            margin-bottom: 1.5rem;
+            background-color: #ffffff;
+        }
+
+        .project-card .card-body {
+            padding: 1.25rem 1.4rem 1.4rem;
+        }
+
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-media {
+            margin-bottom: 1rem;
+        }
+
+        .project-cover,
+        .project-video {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .project-tech {
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+            margin-bottom: 0;
+        }
+
+        .project-links .btn {
+            margin-right: 0.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Dark mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        body.dark-mode .profile-sidebar {
+            background-color: #1f1f1f;
+            border-color: #444;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .6);
+        }
+
+        body.dark-mode .project-card {
+            background-color: #1f1f1f;
+            border-color: #444;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .6);
+        }
+
+        body.dark-mode a {
+            color: #8ab4ff;
+        }
+
+        body.dark-mode a:hover {
+            color: #c3d6ff;
+        }
+
+        body.dark-mode .navbar {
+            background-color: #1f1f1f !important;
+        }
+
+        /* Footer */
+        .site-footer {
+            margin-top: 2rem;
+            padding: 1.5rem 0 2rem;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #777;
+        }
+
+        body.dark-mode .site-footer {
+            color: #bbb;
+        }
+
+        /* Mobile tweaks */
+        @media (max-width: 991.98px) {
+            .profile-sidebar {
+                position: static;
+                margin-bottom: 1.5rem;
+            }
         }
     </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <!-- Page navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0" id="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <h5 class="title">Kaiser Hamid</h5>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="publication.html">Publication</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <input type="checkbox" class="checkbox" id="chk" onclick="darkmode()" />
-                        <label class="label" for="chk">
-                            <i class="fas fa-moon"></i>
-                            <i class="fas fa-sun"></i>
-                            <span class="ball"></span>
-                        </label>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- End of page navigation -->
-
-    <!-- Main content -->
-    <div class="container mt-5">
-        <div class="row">
-            <!-- Left side with image and details -->
-            <div class="col-md-4 text-center mb-4 mb-md-0">
-                <div class="text-center mb-4">
-                    <img src="assets/imgs/dp.JPG" alt="Kaiser" class="mb-1 rounded-circle">
-                </div>
-                <div class="text-center">
-                    <h1 class="title" style="font-size: 40px; display: inline-block;">Kaiser Hamid</h1>
-                    <small>(he/his/him)</small>
-                    <p>Graduate Research Associate </p>
-                    <p>PhD student at <a href="https://www.ttu.edu/">Texas Tech University</a></p>
-                    <div class="buttons pt-3">
-                        <a href="assets/files/cv_kaiser.pdf" download>
-                            <button class="btn btn-dark rounded">Download CV</button>
-                        </a>
-                    </div>
-                    <div class="socials mt-2 d-flex justify-content-center">
-                        <a class="social-item" href="mailto:kaiserhamid.munna@ttu.edu"><i class="ti-email"></i></a>
-                        <a class="social-item" href="https://scholar.google.com/citations?user=rMcz-ckAAAAJ&hl=en" target="_blank" rel="noopener">
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 7.76L5.12 7 12 4.24 18.88 7 12 9.76zM6 19v-4h2v2h8v-2h2v4H6z"/>
-  </svg>
-</a> 
-</a>
-                        <a class="social-item" href="https://www.linkedin.com/in/kaiser-buet"><i class="ti-linkedin"></i></a>
-                        <a class="social-item" href="https://youtube.com/@kaiserhamid1007?si=ql5qjv-ufkJzjRIW"><i class="ti-youtube"></i></a>
-                        <a class="social-item" href="https://github.com/kaiser-75"><i class="ti-github"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right side with About Me, Interests, and Education section -->
-            <div class="col-md-8">
-                <h4>About Me</h4>
-                <p class="mb-3">
-                    Kaiser Hamid is currently pursuing a Ph.D. at <a href="https://www.ttu.edu/">Texas Tech University</a>, serving as a Graduate Research Associate in the <a href="https://www.hiacelab.com/">Human-in-the-loop Advanced Cognitive Engineering Research Lab</a>, under the esteemed guidance of <a href="https://scholar.google.com/citations?user=w6e-GSgAAAAJ&hl=zh-TW">Dr. Nade Liang</a>.
-                </p>
-                <p class="mb-3">
-                    His research centers on Human-Computer Interaction and Computer Vision, with a focus on developing systems for seamless interaction between humans and autonomous vehicles. By integrating computer vision, deep learning, and human factors research, he aims to create safe, intuitive, and user-centric experiences in autonomous driving.
-                </p>
-                <p class="mb-3">
-                 Prior to his current endeavors, Kaiser worked as a Research Assistant under <a href="https://scholar.google.com/citations?user=4Wr8T_sAAAAJ&hl=en">Dr. Annesha Enam</a>, contributing to a funded research project on travel behavior analysis using passive mobility data. He also completed his undergraduate thesis in Intelligent Transportation Systems, supervised by <a href="https://scholar.google.com/citations?user=_7P6RCAAAAJ&hl=en">Dr. Moazzem Hossain</a>, where he developed computer vision-based solutions for queue length estimation at signalized intersections. Kaiser earned his B.Sc. in Civil Engineering from the <a href="https://www.buet.ac.bd/">Bangladesh University of Engineering & Technology (BUET) </a>.
-
-                </p>
-                <p>
-                    Outside of academics, Kaiser enjoys outdoor activities, traveling, and fitness, with a goal of visiting as many countries as possible. He also enjoys trying new foods and spending time with friends and family.
-                </p>
-
-                <!-- Interests and Education Section (side by side on desktop) -->
-                <div class="custom-row stack row mt-5">
-                    <div class="col-md-6">
-                        <h4>Interests</h4>
-                        <ul>
-                            <li>Human-Computer Interaction</li>
-                            <li>Computer Vision</li>
-                            <li>Autonomous Driving</li>
-                            <li>Deep Learning</li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-6">
-                        <h4>Education</h4>
-                        <ul class="education-list">
-                            <li>
-                                <span class="education-program">Ph.D. in Industrial Engineering</span>
-                                <span class="education-university">Texas Tech University, 2024-Current</span>
-                            </li>
-                             <li>
-                                <span class="education-program">MS in Electrical and Computer Engineering</span>
-                                <span class="education-university">Texas Tech University, 2024-Current</span>
-                            </li>
-                            <li>
-                                <span class="education-program">B.Sc. in Civil Engineering</span>
-                                <span class="education-university">Bangladesh University of Engineering & Technology (BUET), 2019-2024</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-2">
-            <h4>Latest News</h4>
-           <ul>
-     <li>
-         <p>October, 2025: Received the HFES Augmented Cognition Technical Group (ACTG) Student Research Grant Award 2025</p>
-     <li>
-        <p>September, 2025: Paper accepted to <a href="https://trb-annual-meeting.nationalacademies.org/">TRB Annual Meeting 2026.</a></p>
-    </li>           
-    <li>
-        <p>September, 2025: Paper accepted to <a href="https://www.hfes.org/Events/ASPIRE-International-Annual-Meeting/ASPIRE-Home">HFES Annual Meeting 2025.</a></p>
-    </li>
-    <li>
-        <p>January, 2025: Proposal for the IISE DAIS Student Mobile/Web App Competition accepted </p>
-    </li>
-    <li>
-        <p>October, 2024: Paper accepted for <a href="https://drive.google.com/file/d/1ftRlfpcUUtHkXG0a1OTQCwOVHXS6m9fy/view?usp=sharing">presentation</a> at <a href="https://trb-annual-meeting.nationalacademies.org/home">TRB Annual Meeting 2025.</a></p>
-    </li>
-    <li>
-        <p>September, 2024: Joined as a Graduate Research Assistant at <a href="https://www.hiacelab.com/">HiACE Research Lab.</a></p>
-    </li>
-    <li>
-        <p>July, 2024: My paper accepted for publication in <a href="https://ieee-itsc.org/2024/">27th IEEE International Conference on Intelligent Transportation Systems (IEEE ITSC 2024).</a></p>
-    </li>
-    <li>
-        <p>June, 2024: Published a dataset named "Bangladeshi vehicles" in Kaggle for computer vision task.</p>
-    </li>
-    <li>
-        <p>January, 2024: First paper accepted in the 17th International Conference on Travel Behavior Research 2024.</p>
-    </li>
-    <li>
-        <p>December, 2023: Awarded a prestigious $2500 research grant from the CASR for research on <a href="https://youtu.be/OyFG3QcIwJA?si=wY939-frc2tzUbW_">Google Location History.</a></p>
-    </li>
-</ul>
-
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0" id="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#home">
+            <h5 class="title">S M Sakif Shahriyar</h5>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <!-- If you keep a separate publication.html, change href to "publication.html" -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#publications">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <input type="checkbox" class="checkbox" id="chk" onclick="darkmode()" />
+                    <label class="label" for="chk">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                        <span class="ball"></span>
+                    </label>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
 
-    <!-- Dark mode script -->
-    <script>
-        function darkmode() {
-            const checkbox = document.getElementById('chk');
-            const body = document.body;
+<!-- Main layout -->
+<div class="container main-layout">
+    <div class="row">
+        <!-- LEFT: IDENTITY / PROFILE SIDEBAR -->
+        <div class="col-lg-4 mb-4">
+            <aside class="profile-sidebar text-center text-lg-left">
+                <!-- Replace with your own profile picture -->
+                <div class="mb-3 text-center">
+                    <img src="assets/imgs/sakif-profile.jpg"
+                         alt="Portrait of S M Sakif Shahriyar"
+                         class="rounded-circle" style="width: 160px; height: 160px; object-fit: cover;">
+                </div>
 
-            if (checkbox.checked) {
-                body.classList.add('dark-mode');
-            } else {
-                body.classList.remove('dark-mode');
-            }
-        }
-    </script>
+                <h1 class="profile-name">S M Sakif Shahriyar</h1>
+                <p class="profile-title mb-1">Lecturer, Civil Engineering</p>
+                <p class="mb-1">Uttara University, Dhaka, Bangladesh</p>
+                <p class="profile-tagline mb-2">
+                    Traffic safety, computer vision, and urban freight logistics.
+                </p>
 
-    <!-- jQuery and Bootstrap scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+                <div class="profile-contact">
+                    <div>Mirpur, Dhaka 1216, Bangladesh</div>
+                    <div>📧 <a href="mailto:smsakifshahriyar@gmail.com">smsakifshahriyar@gmail.com</a></div>
+                    <div>📱 <a href="tel:+8801759100956">+880 1759 100 956</a></div>
+                </div>
+
+                <div class="buttons pt-3 text-center text-lg-left">
+                    <!-- Update path to your actual CV PDF -->
+                    <a href="assets/files/S_M_Sakif_Shahriyar_CV.pdf" target="_blank" rel="noopener">
+                        <button class="btn btn-dark rounded btn-sm">View CV</button>
+                    </a>
+                </div>
+
+                <div class="socials mt-3 d-flex justify-content-center justify-content-lg-start">
+                    <a class="social-item" href="mailto:smsakifshahriyar@gmail.com">
+                        <i class="ti-email"></i>
+                    </a>
+                    <a class="social-item" href="https://github.com/smsakifshahriyar"
+                       target="_blank" rel="noopener">
+                        <i class="ti-github"></i>
+                    </a>
+                    <!-- Optionally add LinkedIn / Scholar if you have them -->
+                    <!--
+                    <a class="social-item" href="https://www.linkedin.com/in/your-link-here" target="_blank" rel="noopener">
+                        <i class="ti-linkedin"></i>
+                    </a>
+                    -->
+                </div>
+
+                <div class="sidebar-section-title">Research Interests</div>
+                <ul class="sidebar-list">
+                    <li>Traffic safety & surrogate safety</li>
+                    <li>Computer vision for transportation</li>
+                    <li>Pedestrian behaviour & crossing intent</li>
+                    <li>Urban freight logistics</li>
+                    <li>Machine learning for transport data</li>
+                </ul>
+
+                <div class="sidebar-section-title">Education</div>
+                <ul class="sidebar-list">
+                    <li>
+                        B.Sc. in Civil Engineering (Transportation)<br>
+                        BUET, Dhaka – 2024<br>
+                        CGPA: 3.74 / 4.00
+                    </li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- RIGHT: MAIN CONTENT -->
+        <div class="col-lg-8">
+            <!-- About / Research Summary -->
+            <section class="content-section" id="about">
+                <h3>About</h3>
+                <p>
+                    I am a Lecturer in the Department of Civil Engineering at Uttara University, Dhaka,
+                    and a recent graduate in Civil Engineering from
+                    <a href="https://www.buet.ac.bd/" target="_blank" rel="noopener">
+                        Bangladesh University of Engineering &amp; Technology (BUET)
+                    </a>,
+                    where I majored in Transportation Engineering and completed my B.Sc. with a CGPA of 3.74 out of 4.00 (July 2024).
+                    My work focuses on applying computer vision and machine learning to traffic safety,
+                    pedestrian behaviour, and urban freight logistics in dense urban environments.
+                </p>
+                <p>
+                    I enjoy building end-to-end tools and open-source pipelines that connect transportation engineering
+                    with data, from dashcam-based pedestrian intent prediction and surrogate safety analysis
+                    to practical systems for automating university exam logistics.
+                </p>
+            </section>
+
+            <!-- Flagship Projects -->
+            <section class="content-section" id="projects">
+                <h3>Flagship Projects</h3>
+
+                <div class="row">
+                    <!-- Project 1: Pedestrian Crossing Intent -->
+                    <div class="col-md-6">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <h4 class="project-title">
+                                    Pedestrian Crossing Intent Prediction from Dashcam Video
+                                </h4>
+                                <div class="project-media">
+                                    <!-- Replace poster and video src with your actual files -->
+                                    <video class="project-video" controls
+                                           poster="assets/imgs/ped-intent-poster.jpg">
+                                        <source src="assets/videos/ped-intent-demo.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <p class="card-text">
+                                    Built a dashcam-based pipeline that detects and tracks pedestrians using YOLOv8
+                                    and BYTETrack, corrects for ego-motion, and estimates crossing intent over time.
+                                    Each tracked pedestrian is classified into <em>SAFE</em>, <em>APPROACHING</em>,
+                                    or <em>CROSSING</em> based on their trajectory relative to lanes and curbs, with
+                                    intent labels overlaid on the video.
+                                </p>
+                                <div class="project-links mt-2">
+                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                       target="_blank" rel="noopener">
+                                        Code (GitHub)
+                                    </a>
+                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                       target="_blank" rel="noopener">
+                                        Demo video
+                                    </a>
+                                </div>
+                                <p class="project-tech">
+                                    <strong>Technologies:</strong> Python, YOLOv8, BYTETrack, OpenCV, NumPy, pandas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Surrogate Safety Analysis -->
+                    <div class="col-md-6">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <h4 class="project-title">
+                                    Surrogate Safety Analysis at Urban Intersection (YOLOv8 + BoT-SORT)
+                                </h4>
+                                <div class="project-media">
+                                    <!-- Replace poster and video src with your actual files -->
+                                    <video class="project-video" controls
+                                           poster="assets/imgs/surrogate-safety-poster.jpg">
+                                        <source src="assets/videos/surrogate-safety-demo.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <p class="card-text">
+                                    Developed a video-based safety analysis pipeline for signalized intersections
+                                    using YOLOv8 and BoT-SORT to detect and track all road users, then compute
+                                    surrogate safety metrics such as Time-To-Collision (TTC) and Post-Encroachment
+                                    Time (PET). The system identifies and categorizes near-miss events by conflict
+                                    type and location, enabling proactive safety assessment beyond crash records.
+                                </p>
+                                <div class="project-links mt-2">
+                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                       target="_blank" rel="noopener">
+                                        Code (GitHub)
+                                    </a>
+                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                       target="_blank" rel="noopener">
+                                        Demo video
+                                    </a>
+                                </div>
+                                <p class="project-tech">
+                                    <strong>Technologies:</strong> Python, YOLOv8, BoT-SORT, OpenCV, NumPy, pandas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second row of flagship projects -->
+                <div class="row">
+                    <!-- Project 3: YOLOv8-L Dhaka Traffic -->
+                    <div class="col-md-6">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <h4 class="project-title">
+                                    YOLOv8-L Based Traffic Detection for Dhaka Streets
+                                </h4>
+                                <div class="project-media">
+                                    <!-- Replace with a detection screenshot from your model -->
+                                    <img src="assets/imgs/dhaka-traffic-cover.jpg"
+                                         alt="YOLOv8-L traffic detection on Dhaka streets"
+                                         class="project-cover img-fluid">
+                                </div>
+                                <p class="card-text">
+                                    Trained a custom YOLOv8-L model on Dhaka street imagery to detect eight traffic
+                                    classes (car, bus, auto-rickshaw, rickshaw, motorcycle, truck, van, pedestrian).
+                                    Focused on robust detection under mixed traffic and occlusion, and analysed
+                                    performance differences between frequent and rare classes to inform dataset and
+                                    model design for downstream applications.
+                                </p>
+                                <div class="project-links mt-2">
+                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                       target="_blank" rel="noopener">
+                                        Code (GitHub)
+                                    </a>
+                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                       target="_blank" rel="noopener">
+                                        Demo video
+                                    </a>
+                                </div>
+                                <p class="project-tech">
+                                    <strong>Technologies:</strong> Python, YOLOv8-L, OpenCV, Computer Vision
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Seat Plan System -->
+                    <div class="col-md-6">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <h4 class="project-title">
+                                    Exam Seat Plan Generator &amp; Web App (Deployed at Uttara University)
+                                </h4>
+                                <div class="project-media">
+                                    <!-- Replace with a screenshot of your web app / output PDF -->
+                                    <img src="assets/imgs/seat-plan-cover.jpg"
+                                         alt="Exam seat plan generator and web app interface"
+                                         class="project-cover img-fluid">
+                                </div>
+                                <p class="card-text">
+                                    Designed and deployed an automated exam seat planning system that parses raw exam
+                                    and student data, applies adjacency and restriction rules, and generates seat plans
+                                    and related documents as PDFs. A Flask-based web interface wraps the core engine,
+                                    enabling departmental staff at Uttara University to upload inputs and download
+                                    one-click ZIP packages for thousands of students per session.
+                                </p>
+                                <div class="project-links mt-2">
+                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                       target="_blank" rel="noopener">
+                                        Code (GitHub)
+                                    </a>
+                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                       target="_blank" rel="noopener">
+                                        Live / Demo
+                                    </a>
+                                </div>
+                                <p class="project-tech">
+                                    <strong>Technologies:</strong> Python, pandas, pdfplumber, FPDF, Flask, HTML/CSS
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications & Thesis -->
+            <section class="content-section" id="publications">
+                <h3>Publications &amp; Thesis</h3>
+                <ul class="list-unstyled">
+                    <li>
+                        <strong>Conference paper:</strong><br>
+                        “A Review of the Freight Generation Models and Data Collection Techniques” –
+                        Noushin Syeara Rodoshi, <strong>S M Sakif Shahriyar</strong>, Md. Amin Al Noor,
+                        Md. Shamsul Hoque.<br>
+                        <em>Proceedings of the 7th International Conference on Civil Engineering for Sustainable Development (ICCESD 2024)</em>,
+                        KUET, Khulna, Bangladesh, 7–9 February 2024.
+                    </li>
+                    <li class="mt-3">
+                        <strong>Undergraduate thesis:</strong><br>
+                        “Modelling Dhaka's Urban Freight Logistics Considering Shipment Size and Vehicle.”<br>
+                        Developed predictive models for establishment-level shipment size and freight vehicle
+                        choice in Dhaka City, combining survey-based data collection, statistical analysis,
+                        and machine learning in RStudio and Python under the supervision of
+                        Prof. Md. Shamsul Hoque.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Teaching & Highlights -->
+            <section class="content-section">
+                <h3>Teaching &amp; Recent Highlights</h3>
+                <ul>
+                    <li>
+                        <strong>Lecturer, Department of Civil Engineering, Uttara University</strong> (Jan 2024 – present):<br>
+                        Deliver lectures and practical sessions in civil engineering and support departmental exam logistics
+                        and automation.
+                    </li>
+                    <li>
+                        <strong>Recognition for Excellence in Developing Transformative Solution for Exam Seat Planning</strong> –
+                        awarded by the Department of Civil Engineering, Uttara University, for developing the automated exam
+                        seat planning system.
+                    </li>
+                    <li>
+                        <strong>Statistical Learning with Python – Stanford Online</strong>: completed a verified course covering
+                        linear regression, classification, tree-based methods, SVMs, deep learning, and unsupervised learning.
+                    </li>
+                    <li>
+                        <strong>B.Sc. in Civil Engineering (Transportation Engineering), BUET</strong>, July 2024 –
+                        CGPA 3.74 out of 4.00.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Optional: Latest News -->
+            <section class="content-section">
+                <h3>Latest News</h3>
+                <ul>
+                    <li>July 2024 – Completed B.Sc. in Civil Engineering (Transportation Engineering major) at BUET.</li>
+                    <li>February 2024 – Co-authored and presented a paper on freight generation models at ICCESD 2024.</li>
+                    <li>2023–2024 – Automated exam seat planning adopted by Uttara University for department-wide use.</li>
+                    <li>2024 – Completed Stanford Online “Statistical Learning with Python” certification.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div>
+        © <span id="year"></span> S M Sakif Shahriyar
+    </div>
+    <div>
+        Last updated:
+        <script type="text/javascript">
+            (function () {
+                var lastModDate = new Date(document.lastModified);
+                var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                var formattedDate = months[lastModDate.getMonth()] + ' ' +
+                    lastModDate.getDate() + ', ' + lastModDate.getFullYear();
+                document.write(formattedDate);
+            })();
+        </script>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+<script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+<script src="assets/js/steller.js"></script>
+<script>
+    // Dark mode toggle
+    function darkmode() {
+        document.body.classList.toggle("dark-mode");
+    }
+
+    // Set current year in footer
+    (function () {
+        var y = new Date().getFullYear();
+        var el = document.getElementById('year');
+        if (el) el.textContent = y;
+    })();
+</script>
 </body>
-
 </html>
