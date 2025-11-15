@@ -404,19 +404,18 @@
                                     </video>
                                 </div>
                                 <p class="card-text">
-                                    Built a YOLOv8 + BYTETrack–based dashcam pipeline to detect, track,
-                                    and model pedestrian behaviour. Used ego-motion–corrected trajectories
-                                    and lane/curb geometry to predict crossing intent, outputting SAFE /
-                                    APPROACHING / CROSSING states overlaid on the video.
+                                    Built a YOLOv8 + BYTETrack based dashcam pipeline to track pedestrians and estimate crossing intent 
+                                    from ego-motion–corrected trajectories and lane/curb geometry, outputting SAFE / APPROACHING / 
+                                    CROSSING states overlaid on video.
                                 </p>
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://github.com/smsakifshahriyar/pedestrian-intent-dashcam"
+                                       href="https://github.com/SMSakifShahriyar/Pedestrian-Crossing-Intent-Prediction-from-Dashcam-Video"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://youtu.be/your-demo-link"
+                                       href="https://www.youtube.com/watch?v=O9Jai3chwvI"
                                        target="_blank" rel="noopener">
                                         Demo video
                                     </a>
@@ -443,16 +442,16 @@
                                     Developed a YOLOv8 + BoT-SORT pipeline to detect and track road users
                                     at signalized intersections and compute surrogate safety metrics such as
                                     Time-To-Collision (TTC) and Post-Encroachment Time (PET) for near-miss
-                                    classification across intersection zones.
+                                    classification across custom intersection zones.
                                 </p>
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://github.com/smsakifshahriyar/surrogate-safety-yolov8-botsort"
+                                       href="https://github.com/SMSakifShahriyar/Vision-Based-Near-Miss-Detection-with-YOLOv8-BoT-SORT-and-TTC-PET-Metrics"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://youtu.be/your-surrogate-demo-link"
+                                       href="https://youtu.be/rJHrHezXf8E?si=I2eHXXkyLCkozo5F"
                                        target="_blank" rel="noopener">
                                         Demo video
                                     </a>
@@ -479,17 +478,16 @@
                                 <p class="card-text">
                                     Trained a custom YOLOv8-L model for Dhaka traffic detection with eight classes
                                     (car, bus, auto-rickshaw, rickshaw, motorcycle, truck, van, pedestrian).
-                                    Achieved strong performance on frequent classes and analysed weaknesses on rare
-                                    ones for downstream safety and operations applications.
+                                    Achieved strong performance on frequent classes (car, bus, auto-rickshaw).
                                 </p>
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://github.com/smsakifshahriyar/dhaka-yolov8-traffic"
+                                       href="https://github.com/SMSakifShahriyar/TFPBD-YOLO-Dhaka-Traffic-Detection-YOLOv8-L-model-trained-on-Dhaka-road-users-person-bicycle-"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://youtu.be/your-dhaka-traffic-demo"
+                                       href="https://www.youtube.com/watch?v=KY5xIBYgK4s"
                                        target="_blank" rel="noopener">
                                         Demo video
                                     </a>
@@ -511,24 +509,20 @@
                                          class="project-cover">
                                 </div>
                                 <p class="card-text">
-                                    Developed an automated seating system now used for every exam session at
-                                    Uttara University. The Python engine parses raw exam and student data, applies
-                                    adjacency and restriction rules, and generates seat plans and supporting PDFs
-                                    for thousands of students per session.
+                                    Developed an automated exam seating system for Uttara University that
+                                    parses raw exam and student data, applies adjacency and restriction 
+                                    rules, and generates seat plans and PDFs for thousands of students 
+                                    each session, all accessible through a simple Flask web app.
                                 </p>
-                                <p class="card-text">
-                                    Wrapped the engine in a Flask web app with login and upload workflows so
-                                    departmental staff can generate all seat-plan outputs in the browser and
-                                    download one-click ZIP bundles for each exam.
-                                </p>
+                               
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://github.com/smsakifshahriyar/exam-seat-plan-generator"
+                                       href="https://github.com/SMSakifShahriyar/seatplan_webapp"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://your-seat-plan-demo-link"
+                                       href="https://boiling-jennica-uttara-d780cbd8.koyeb.app/login"
                                        target="_blank" rel="noopener">
                                         Live / Demo
                                     </a>
@@ -553,12 +547,11 @@
                                 <p class="card-text">
                                     Built a neural network from scratch using only NumPy to recognize handwritten
                                     digits. Implemented forward propagation, backpropagation, and gradient descent
-                                    manually, including weight initialization, activation functions, and mini-batch
-                                    training loops.
+                                    manually.
                                 </p>
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://github.com/smsakifshahriyar/mnist-nn-from-scratch"
+                                       href="https://github.com/SMSakifShahriyar/mnist-neural-network-from-scratch"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
@@ -578,14 +571,13 @@
                                          class="project-cover">
                                 </div>
                                 <p class="card-text">
-                                    Developed tools to evaluate Mars Orbiter Laser Altimeter (MOLA) DEMs for
-                                    potential landing sites. Scanned and scored low-relief zones between ±30°
-                                    latitude, visualized candidate rectangles on MOLA color maps, and generated
-                                    elevation profiles and 3D surfaces using NumPy, OpenCV, Matplotlib, and Tkinter.
+                                    Developed tools to evaluate Mars Orbiter Laser Altimeter (MOLA) digital elevation models for potential landing 
+                                    sites: scanning and scoring low-relief zones, visualizing candidates on color maps, and generating elevation profiles 
+                                    using NumPy, OpenCV, Matplotlib, and Tkinter
                                 </p>
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://github.com/smsakifshahriyar/mars-site-selector"
+                                       href="https://github.com/SMSakifShahriyar/mars-site-selector"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
@@ -608,15 +600,13 @@
                                          class="project-cover">
                                 </div>
                                 <p class="card-text">
-                                    Created an interactive Bayesian search-and-rescue simulator on a coastal map
-                                    with three search areas. Modelled sequential searches with forecast and realized
-                                    effectiveness, updated posterior probabilities after each search, and used
-                                    Monte Carlo runs (up to 10,000 iterations) to compare alternative search
-                                    strategies.
+                                    Created an interactive Bayesian search simulator that models sequential area searches on a map, applying probabilistic 
+                                    updates based on forecast and realized effectiveness and running Monte Carlo simulations (up to 10,000 iterations) 
+                                    to compare search strategies, using Python with NumPy and OpenCV.
                                 </p>
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://github.com/smsakifshahriyar/bayesian-search-rescue"
+                                       href="https://github.com/SMSakifShahriyar/bayes-sar"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
@@ -636,14 +626,13 @@
                                          class="project-cover">
                                 </div>
                                 <p class="card-text">
-                                    Built and evaluated linear regression models for housing prices on a large
-                                    sales dataset. Performed feature engineering on location, building attributes,
-                                    interactions, and time effects, and evaluated models using cross-validation,
-                                    RMSE, R², and residual diagnostics.
+                                    Built and evaluated linear regression models for housing prices on a large sales dataset, with feature engineering 
+                                    (location, interactions, time effects) and model validation (cross-validation, RMSE, R²) in Python (scikit-learn, 
+                                    statsmodels).
                                 </p>
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://github.com/smsakifshahriyar/housing-price-modeling"
+                                       href="https://github.com/SMSakifShahriyar/Housing-Price-Prediction"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
@@ -666,14 +655,12 @@
                                          class="project-cover">
                                 </div>
                                 <p class="card-text">
-                                    Designed a MATLAB command-line tool to compute earthwork volumes using
-                                    average-height, trapezoidal, and prismoidal methods. Supports multi-segment
-                                    grades, unit selection, and basic data visualization for quick cut–fill
-                                    assessment along a highway alignment.
+                                    Designed a command-line tool to compute earthwork volumes using average-height, trapezoidal, and prismoidal 
+                                    methods, with support for multi-segment grades, unit selection, and basic data visualization, developed in MATLAB. 
                                 </p>
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
-                                       href="https://github.com/smsakifshahriyar/earthwork-cut-fill-calculator"
+                                       href="https://github.com/SMSakifShahriyar/Eathwork-Cut-Fill-Calculation"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
