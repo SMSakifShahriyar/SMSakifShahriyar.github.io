@@ -423,9 +423,12 @@
                                     </video>
                                 </div>
                                 <p class="card-text">
-                                    Built a YOLOv8 + BYTETrack based dashcam pipeline to track pedestrians and estimate crossing intent 
-                                    from ego-motion–corrected trajectories and lane/curb geometry, outputting SAFE / APPROACHING / 
-                                    CROSSING states overlaid on video.
+                                    While many recent approaches to pedestrian crossing intention rely on large, 
+                                    end-to-end deep models trained on dedicated intent datasets, this prototype 
+                                    explores a lightweight alternative: YOLOv8 + BYTETrack tracking,
+                                    ego-motion–corrected geometric features, and heuristic fusion 
+                                    (with optional pose and road-segmentation cues) to produce interpretable 
+                                    SAFE / APPROACHING / CROSSING states on dashcam video.
                                 </p>
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
