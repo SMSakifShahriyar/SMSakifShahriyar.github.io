@@ -10,77 +10,245 @@
     <meta name="author" content="S M Sakif Shahriyar">
 
     <!-- Favicon (update this to your own image) -->
+    <!-- TODO: point to your real favicon -->
     <link rel="icon" type="image/png" href="assets/imgs/sakif.png">
 
     <title>S M Sakif Shahriyar</title>
 
-    <!-- Icons & CSS -->
+    <!-- Icons & CSS (from your template) -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/steller.css">
     <link rel="stylesheet" href="assets/css/typography.css">
 
     <style>
-        /* Basic responsive image handling */
+        /* ---------- Global layout & typography ---------- */
+
+        body {
+            background-color: #f5f5f7;
+            color: #222;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
         img {
             max-width: 100%;
             height: auto;
         }
 
-        /* Layout: left sidebar + right content */
-        .main-layout {
-            margin-top: 5rem; /* space below navbar */
-            padding-top: 1rem;
+        a {
+            text-decoration: none;
         }
 
+        a:hover {
+            text-decoration: none;
+        }
+
+        .main-layout {
+            margin-top: 5.5rem; /* space below navbar */
+            padding-top: 0.5rem;
+            padding-bottom: 3rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.1rem;
+        }
+
+        .content-section p {
+            font-size: 0.98rem;
+        }
+
+        .about-text {
+            max-width: 720px;
+        }
+
+        /* ---------- Navbar ---------- */
+
+        .navbar {
+            background-color: #ffffff !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+        }
+
+        .navbar-brand .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.4rem 0.75rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        /* ---------- Dark mode toggle ---------- */
+
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .label {
+            background-color: #111;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3px;
+            position: relative;
+            height: 20px;
+            width: 40px;
+            transform: scale(0.8);
+            margin-left: 0.5rem;
+        }
+
+        .label .ball {
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            height: 16px;
+            width: 16px;
+            transform: translateX(0);
+            transition: transform 0.2s linear;
+        }
+
+        .checkbox:checked + .label .ball {
+            transform: translateX(19px);
+        }
+
+        .label .fa-moon {
+            font-size: 0.6rem;
+            color: #f1c40f;
+        }
+
+        .label .fa-sun {
+            font-size: 0.6rem;
+            color: #f39c12;
+        }
+
+        /* ---------- Sidebar ---------- */
+
         .profile-sidebar {
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, .06);
+            border-radius: 16px;
+            padding: 1.6rem 1.6rem 1.5rem;
+            border: 1px solid #dedede;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
             background-color: #ffffff;
             position: sticky;
-            top: 80px; /* below navbar */
+            top: 88px; /* below navbar */
+        }
+
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .profile-header {
+                align-items: flex-start;
+            }
+        }
+
+        .profile-photo {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0.9rem;
         }
 
         .profile-name {
-            font-size: 28px;
+            font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 0.25rem;
         }
 
         .profile-title {
-            margin-bottom: 0.3rem;
+            font-size: 0.98rem;
+            font-weight: 500;
+            margin-bottom: 0.15rem;
+        }
+
+        .profile-affiliation {
+            font-size: 0.94rem;
+            margin-bottom: 0.4rem;
         }
 
         .profile-tagline {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #555;
+            margin-bottom: 0.9rem;
         }
 
         .profile-contact {
             font-size: 0.9rem;
-            margin-top: 0.75rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .profile-contact div + div {
+            margin-top: 0.15rem;
         }
 
         .profile-contact a {
             word-break: break-all;
         }
 
-        .buttons .btn {
-            margin-right: 0.3rem;
+        .profile-buttons {
+            margin-bottom: 0.9rem;
         }
 
-        .socials .social-item {
-            margin: 0 0.25rem;
-            font-size: 1.2rem;
+        .profile-buttons .btn {
+            font-size: 0.85rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+        }
+
+        .profile-socials {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-socials .social-item {
+            font-size: 1.1rem;
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .profile-socials .social-item:hover {
+            background-color: #f0f0f0;
         }
 
         .sidebar-section-title {
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
+            margin-top: 1.1rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #666;
         }
 
         .sidebar-list {
@@ -89,78 +257,153 @@
             margin-bottom: 0;
         }
 
-        /* Right column content */
-        .content-section {
-            margin-bottom: 2.5rem;
+        .sidebar-list li + li {
+            margin-top: 0.15rem;
         }
 
-        .content-section h3 {
-            margin-bottom: 1rem;
+        /* ---------- Projects ---------- */
+
+        .project-section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
         }
 
-        .content-section p {
-            font-size: 0.98rem;
+        .project-section-header small {
+            font-size: 0.8rem;
+            color: #777;
         }
 
-        /* Project cards */
+        .project-row {
+            margin-bottom: 1.8rem;
+        }
+
         .project-card {
-            border-radius: 12px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, .06);
-            margin-bottom: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid #dedede;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
             background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-card .card-body {
-            padding: 1.25rem 1.4rem 1.4rem;
+            padding: 1.1rem 1.25rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-title {
             font-weight: 600;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.7rem;
+            font-size: 1.02rem;
         }
 
         .project-media {
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
         }
 
         .project-cover,
         .project-video {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 12px;
             display: block;
             aspect-ratio: 16 / 9;
             object-fit: cover;
             background: #000;
         }
 
-        .project-tech {
-            font-size: 0.9rem;
-            margin-top: 0.75rem;
-            margin-bottom: 0;
+        .project-card .card-text {
+            font-size: 0.93rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-links {
+            margin-top: auto; /* push links to bottom area */
         }
 
         .project-links .btn {
-            margin-right: 0.3rem;
+            margin-right: 0.35rem;
             margin-bottom: 0.3rem;
+            font-size: 0.82rem;
+            padding: 0.28rem 0.6rem;
+            border-radius: 999px;
         }
 
-        /* Dark mode */
+        .project-tech {
+            font-size: 0.83rem;
+            margin-top: 0.35rem;
+            margin-bottom: 0;
+            color: #666;
+        }
+
+        /* ---------- Lists & other sections ---------- */
+
+        .list-unstyled li {
+            margin-bottom: 0.7rem;
+        }
+
+        .teaching-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        .news-list li {
+            margin-bottom: 0.45rem;
+            font-size: 0.92rem;
+        }
+
+        /* ---------- Footer ---------- */
+
+        .site-footer {
+            border-top: 1px solid #dddddd;
+            margin-top: 1rem;
+            padding: 1.2rem 0 1.6rem;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #777;
+        }
+
+        /* ---------- Dark mode ---------- */
+
         body.dark-mode {
             background-color: #121212;
-            color: #ffffff;
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .navbar {
+            background-color: #181818 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        body.dark-mode .navbar-nav .nav-link {
+            color: #f1f1f1 !important;
+        }
+
+        body.dark-mode .navbar-brand .title {
+            color: #f1f1f1;
         }
 
         body.dark-mode .profile-sidebar {
-            background-color: #1f1f1f;
-            border-color: #444;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, .6);
+            background-color: #1c1c1f;
+            border-color: #333;
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
         }
 
         body.dark-mode .project-card {
-            background-color: #1f1f1f;
-            border-color: #444;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, .6);
+            background-color: #1c1c1f;
+            border-color: #333;
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
+        }
+
+        body.dark-mode .sidebar-section-title {
+            color: #aaa;
+        }
+
+        body.dark-mode .site-footer {
+            border-color: #333;
+            color: #b8b8b8;
         }
 
         body.dark-mode a {
@@ -171,28 +414,18 @@
             color: #c3d6ff;
         }
 
-        body.dark-mode .navbar {
-            background-color: #1f1f1f !important;
+        body.dark-mode .profile-socials .social-item {
+            border-color: #444;
         }
 
-        /* Footer */
-        .site-footer {
-            margin-top: 2rem;
-            padding: 1.5rem 0 2rem;
-            font-size: 0.85rem;
-            text-align: center;
-            color: #777;
+        body.dark-mode .profile-socials .social-item:hover {
+            background-color: #333;
         }
 
-        body.dark-mode .site-footer {
-            color: #bbb;
-        }
-
-        /* Mobile tweaks */
         @media (max-width: 991.98px) {
             .profile-sidebar {
                 position: static;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.8rem;
             }
         }
     </style>
@@ -200,29 +433,33 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0" id="navbar">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
     <div class="container">
         <a class="navbar-brand" href="#home">
-            <h5 class="title">S M Sakif Shahriyar</h5>
+            <h5 class="title mb-0">S M Sakif Shahriyar</h5>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#about">Home</a>
                 </li>
-                <!-- If you keep a separate publication.html, change href to "publication.html" -->
                 <li class="nav-item">
                     <a class="nav-link" href="#publications">Publications</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#projects">Projects</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-none d-lg-block">
+                    <!-- TODO: update CV link -->
+                    <a class="nav-link" href="assets/files/S_M_Sakif_Shahriyar_CV.pdf" target="_blank" rel="noopener">CV</a>
+                </li>
+                <li class="nav-item ml-lg-2">
                     <input type="checkbox" class="checkbox" id="chk" onclick="darkmode()" />
                     <label class="label" for="chk">
                         <i class="fas fa-moon"></i>
@@ -238,22 +475,23 @@
 <!-- Main layout -->
 <div class="container main-layout">
     <div class="row">
-        <!-- LEFT: IDENTITY / PROFILE SIDEBAR -->
+        <!-- LEFT: PROFILE SIDEBAR -->
         <div class="col-lg-4 mb-4">
-            <aside class="profile-sidebar text-center text-lg-left">
-                <!-- Replace with your own profile picture -->
-                <div class="mb-3 text-center">
+            <aside class="profile-sidebar">
+                <div class="profile-header">
+                    <!-- TODO: set your real profile image -->
                     <img src="assets/imgs/sakif-profile.jpg"
                          alt="Portrait of S M Sakif Shahriyar"
-                         class="rounded-circle" style="width: 160px; height: 160px; object-fit: cover;">
+                         class="profile-photo">
+                    <h1 class="profile-name">S M Sakif Shahriyar</h1>
+                    <p class="profile-title">Lecturer, Civil Engineering</p>
+                    <p class="profile-affiliation mb-1">
+                        Uttara University, Dhaka, Bangladesh
+                    </p>
+                    <p class="profile-tagline">
+                        Traffic safety, computer vision, and urban freight logistics.
+                    </p>
                 </div>
-
-                <h1 class="profile-name">S M Sakif Shahriyar</h1>
-                <p class="profile-title mb-1">Lecturer, Civil Engineering</p>
-                <p class="mb-1">Uttara University, Dhaka, Bangladesh</p>
-                <p class="profile-tagline mb-2">
-                    Traffic safety, computer vision, and urban freight logistics.
-                </p>
 
                 <div class="profile-contact">
                     <div>Mirpur, Dhaka 1216, Bangladesh</div>
@@ -261,34 +499,39 @@
                     <div>📱 <a href="tel:+8801759100956">+880 1759 100 956</a></div>
                 </div>
 
-                <div class="buttons pt-3 text-center text-lg-left">
-                    <!-- Update path to your actual CV PDF -->
-                    <a href="assets/files/S_M_Sakif_Shahriyar_CV.pdf" target="_blank" rel="noopener">
-                        <button class="btn btn-dark rounded btn-sm">View CV</button>
+                <div class="profile-buttons">
+                    <!-- TODO: update CV path -->
+                    <a href="assets/files/S_M_Sakif_Shahriyar_CV.pdf"
+                       class="btn btn-dark"
+                       target="_blank" rel="noopener">
+                        View CV
                     </a>
                 </div>
 
-                <div class="socials mt-3 d-flex justify-content-center justify-content-lg-start">
-                    <a class="social-item" href="mailto:smsakifshahriyar@gmail.com">
+                <div class="profile-socials">
+                    <a class="social-item" href="mailto:smsakifshahriyar@gmail.com" aria-label="Email">
                         <i class="ti-email"></i>
                     </a>
                     <a class="social-item" href="https://github.com/smsakifshahriyar"
-                       target="_blank" rel="noopener">
+                       target="_blank" rel="noopener" aria-label="GitHub">
                         <i class="ti-github"></i>
                     </a>
-                    <!-- Optionally add LinkedIn / Scholar if you have them -->
+                    <!-- Uncomment / update when ready -->
                     <!--
-                    <a class="social-item" href="https://www.linkedin.com/in/your-link-here" target="_blank" rel="noopener">
+                    <a class="social-item" href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <i class="ti-linkedin"></i>
+                    </a>
+                    <a class="social-item" href="YOUR_SCHOLAR_URL" target="_blank" rel="noopener" aria-label="Google Scholar">
+                        <i class="ti-book"></i>
                     </a>
                     -->
                 </div>
 
                 <div class="sidebar-section-title">Research Interests</div>
                 <ul class="sidebar-list">
-                    <li>Traffic safety & surrogate safety</li>
+                    <li>Traffic safety &amp; surrogate safety</li>
                     <li>Computer vision for transportation</li>
-                    <li>Pedestrian behaviour & crossing intent</li>
+                    <li>Pedestrian behaviour &amp; crossing intent</li>
                     <li>Urban freight logistics</li>
                     <li>Machine learning for transport data</li>
                 </ul>
@@ -309,37 +552,45 @@
             <!-- About / Research Summary -->
             <section class="content-section" id="about">
                 <h3>About</h3>
-                <p>
-                    I am a Lecturer in the Department of Civil Engineering at Uttara University, Dhaka,
-                    and a recent graduate in Civil Engineering from
-                    <a href="https://www.buet.ac.bd/" target="_blank" rel="noopener">
-                        Bangladesh University of Engineering &amp; Technology (BUET)
-                    </a>,
-                    where I majored in Transportation Engineering and completed my B.Sc. with a CGPA of 3.74 out of 4.00 (July 2024).
-                    My work focuses on applying computer vision and machine learning to traffic safety,
-                    pedestrian behaviour, and urban freight logistics in dense urban environments.
-                </p>
-                <p>
-                    I enjoy building end-to-end tools and open-source pipelines that connect transportation engineering
-                    with data, from dashcam-based pedestrian intent prediction and surrogate safety analysis
-                    to practical systems for automating university exam logistics.
-                </p>
+                <div class="about-text">
+                    <p>
+                        I am a Lecturer in the Department of Civil Engineering at Uttara University, Dhaka,
+                        and a recent graduate in Civil Engineering from
+                        <a href="https://www.buet.ac.bd/" target="_blank" rel="noopener">
+                            Bangladesh University of Engineering &amp; Technology (BUET)
+                        </a>,
+                        where I majored in Transportation Engineering and completed my B.Sc. with a CGPA
+                        of 3.74 out of 4.00 (July 2024). My work focuses on applying computer vision and
+                        machine learning to traffic safety, pedestrian behaviour, and urban freight logistics
+                        in dense urban environments.
+                    </p>
+                    <p>
+                        I enjoy building end-to-end tools and open-source pipelines that connect
+                        transportation engineering with data – from dashcam-based pedestrian intent
+                        prediction and surrogate safety analysis, to practical systems for automating
+                        university exam logistics and freight modeling for urban deliveries.
+                    </p>
+                </div>
             </section>
 
             <!-- Flagship Projects -->
             <section class="content-section" id="projects">
-                <h3>Flagship Projects</h3>
+                <div class="project-section-header">
+                    <h3>Flagship Projects</h3>
+                    <small>Selected work in transportation, ML, and computer vision</small>
+                </div>
 
-                <div class="row">
+                <!-- Row 1 -->
+                <div class="row project-row">
                     <!-- Project 1: Pedestrian Crossing Intent -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-4">
                         <div class="card project-card">
                             <div class="card-body">
                                 <h4 class="project-title">
                                     Pedestrian Crossing Intent Prediction from Dashcam Video
                                 </h4>
                                 <div class="project-media">
-                                    <!-- Replace poster and video src with your actual files -->
+                                    <!-- TODO: update poster & video paths -->
                                     <video class="project-video" controls
                                            poster="assets/imgs/ped-intent-poster.jpg">
                                         <source src="assets/videos/ped-intent-demo.mp4" type="video/mp4">
@@ -347,38 +598,39 @@
                                     </video>
                                 </div>
                                 <p class="card-text">
-                                    Built a dashcam-based pipeline that detects and tracks pedestrians using YOLOv8
-                                    and BYTETrack, corrects for ego-motion, and estimates crossing intent over time.
-                                    Each tracked pedestrian is classified into <em>SAFE</em>, <em>APPROACHING</em>,
-                                    or <em>CROSSING</em> based on their trajectory relative to lanes and curbs, with
+                                    Built a dashcam-based pipeline that detects and tracks pedestrians using
+                                    YOLOv8 and BYTETrack, corrects for ego-motion, and estimates crossing intent
+                                    over time. Each trajectory is classified into <em>SAFE</em>, <em>APPROACHING</em>,
+                                    or <em>CROSSING</em> based on motion relative to lanes and curbs, with
                                     intent labels overlaid on the video.
                                 </p>
-                                <div class="project-links mt-2">
-                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                <div class="project-links">
+                                    <!-- TODO: update URLs -->
+                                    <a class="btn btn-outline-primary btn-sm" href="#"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
-                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                    <a class="btn btn-outline-primary btn-sm" href="#"
                                        target="_blank" rel="noopener">
                                         Demo video
                                     </a>
+                                    <p class="project-tech">
+                                        <strong>Technologies:</strong> Python, YOLOv8, BYTETrack, OpenCV, NumPy, pandas
+                                    </p>
                                 </div>
-                                <p class="project-tech">
-                                    <strong>Technologies:</strong> Python, YOLOv8, BYTETrack, OpenCV, NumPy, pandas
-                                </p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 2: Surrogate Safety Analysis -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-4">
                         <div class="card project-card">
                             <div class="card-body">
                                 <h4 class="project-title">
                                     Surrogate Safety Analysis at Urban Intersection (YOLOv8 + BoT-SORT)
                                 </h4>
                                 <div class="project-media">
-                                    <!-- Replace poster and video src with your actual files -->
+                                    <!-- TODO: update poster & video paths -->
                                     <video class="project-video" controls
                                            poster="assets/imgs/surrogate-safety-poster.jpg">
                                         <source src="assets/videos/surrogate-safety-demo.mp4" type="video/mp4">
@@ -387,104 +639,124 @@
                                 </div>
                                 <p class="card-text">
                                     Developed a video-based safety analysis pipeline for signalized intersections
-                                    using YOLOv8 and BoT-SORT to detect and track all road users, then compute
-                                    surrogate safety metrics such as Time-To-Collision (TTC) and Post-Encroachment
-                                    Time (PET). The system identifies and categorizes near-miss events by conflict
-                                    type and location, enabling proactive safety assessment beyond crash records.
+                                    using YOLOv8 and BoT-SORT to detect and track road users. The system computes
+                                    surrogate safety metrics such as Time-to-Collision (TTC) and Post-Encroachment
+                                    Time (PET), identifies near-miss events, and categorizes them by conflict type
+                                    and location for proactive safety assessment.
                                 </p>
-                                <div class="project-links mt-2">
-                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                <div class="project-links">
+                                    <!-- TODO: update URLs -->
+                                    <a class="btn btn-outline-primary btn-sm" href="#"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
-                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                    <a class="btn btn-outline-primary btn-sm" href="#"
                                        target="_blank" rel="noopener">
                                         Demo video
                                     </a>
+                                    <p class="project-tech">
+                                        <strong>Technologies:</strong> Python, YOLOv8, BoT-SORT, OpenCV, NumPy, pandas
+                                    </p>
                                 </div>
-                                <p class="project-tech">
-                                    <strong>Technologies:</strong> Python, YOLOv8, BoT-SORT, OpenCV, NumPy, pandas
-                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Second row of flagship projects -->
-                <div class="row">
+                <!-- Row 2 -->
+                <div class="row project-row">
                     <!-- Project 3: YOLOv8-L Dhaka Traffic -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-4">
                         <div class="card project-card">
                             <div class="card-body">
                                 <h4 class="project-title">
                                     YOLOv8-L Based Traffic Detection for Dhaka Streets
                                 </h4>
                                 <div class="project-media">
-                                    <!-- Replace with a detection screenshot from your model -->
+                                    <!-- TODO: update image path -->
                                     <img src="assets/imgs/dhaka-traffic-cover.jpg"
                                          alt="YOLOv8-L traffic detection on Dhaka streets"
-                                         class="project-cover img-fluid">
+                                         class="project-cover">
                                 </div>
                                 <p class="card-text">
                                     Trained a custom YOLOv8-L model on Dhaka street imagery to detect eight traffic
                                     classes (car, bus, auto-rickshaw, rickshaw, motorcycle, truck, van, pedestrian).
                                     Focused on robust detection under mixed traffic and occlusion, and analysed
-                                    performance differences between frequent and rare classes to inform dataset and
-                                    model design for downstream applications.
+                                    performance differences between frequent and rare classes to support downstream
+                                    traffic analytics applications.
                                 </p>
-                                <div class="project-links mt-2">
-                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                <div class="project-links">
+                                    <!-- TODO: update URLs -->
+                                    <a class="btn btn-outline-primary btn-sm" href="#"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
-                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                    <a class="btn btn-outline-primary btn-sm" href="#"
                                        target="_blank" rel="noopener">
                                         Demo video
                                     </a>
+                                    <p class="project-tech">
+                                        <strong>Technologies:</strong> Python, YOLOv8-L, OpenCV, Computer Vision
+                                    </p>
                                 </div>
-                                <p class="project-tech">
-                                    <strong>Technologies:</strong> Python, YOLOv8-L, OpenCV, Computer Vision
-                                </p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 4: Seat Plan System -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-4">
                         <div class="card project-card">
                             <div class="card-body">
                                 <h4 class="project-title">
                                     Exam Seat Plan Generator &amp; Web App (Deployed at Uttara University)
                                 </h4>
                                 <div class="project-media">
-                                    <!-- Replace with a screenshot of your web app / output PDF -->
+                                    <!-- TODO: update image path -->
                                     <img src="assets/imgs/seat-plan-cover.jpg"
                                          alt="Exam seat plan generator and web app interface"
-                                         class="project-cover img-fluid">
+                                         class="project-cover">
                                 </div>
                                 <p class="card-text">
                                     Designed and deployed an automated exam seat planning system that parses raw exam
                                     and student data, applies adjacency and restriction rules, and generates seat plans
-                                    and related documents as PDFs. A Flask-based web interface wraps the core engine,
-                                    enabling departmental staff at Uttara University to upload inputs and download
-                                    one-click ZIP packages for thousands of students per session.
+                                    and related documents as PDFs. A Flask-based web interface enables departmental
+                                    staff to upload inputs and download one-click ZIP packages for thousands of
+                                    students per session.
                                 </p>
-                                <div class="project-links mt-2">
-                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                <div class="project-links">
+                                    <!-- TODO: update URLs -->
+                                    <a class="btn btn-outline-primary btn-sm" href="#"
                                        target="_blank" rel="noopener">
                                         Code (GitHub)
                                     </a>
-                                    <a class="btn btn-sm btn-outline-primary" href="#"
+                                    <a class="btn btn-outline-primary btn-sm" href="#"
                                        target="_blank" rel="noopener">
-                                        Live / Demo
+                                        Live / demo
                                     </a>
+                                    <p class="project-tech">
+                                        <strong>Technologies:</strong> Python, pandas, pdfplumber, FPDF, Flask, HTML/CSS
+                                    </p>
                                 </div>
-                                <p class="project-tech">
-                                    <strong>Technologies:</strong> Python, pandas, pdfplumber, FPDF, Flask, HTML/CSS
-                                </p>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Optional: more projects list -->
+                <div class="content-section">
+                    <h4 class="mb-2" style="font-size:1.1rem;">More Technical Projects (selected)</h4>
+                    <ul class="news-list">
+                        <li><strong>MNIST Neural Network from Scratch:</strong> implemented forward/backpropagation and gradient descent
+                            using only NumPy for handwritten digit recognition.</li>
+                        <li><strong>Mars Site Selector:</strong> tools to evaluate MOLA DEM data, score low-relief candidate landing sites,
+                            and visualize elevation profiles.</li>
+                        <li><strong>Bayesian Search &amp; Rescue Simulator:</strong> interactive tool modeling sequential area searches
+                            with probabilistic updates and Monte Carlo evaluation of search strategies.</li>
+                        <li><strong>Housing Price Modeling:</strong> regression models with feature engineering and validation on large
+                            sales datasets using scikit-learn and statsmodels.</li>
+                        <li><strong>Earthwork Cut–Fill Calculator:</strong> MATLAB tool for highway earthwork volume estimation using
+                            multiple numerical methods.</li>
+                    </ul>
                 </div>
             </section>
 
@@ -513,25 +785,23 @@
 
             <!-- Teaching & Highlights -->
             <section class="content-section">
-                <h3>Teaching &amp; Recent Highlights</h3>
-                <ul>
+                <h3>Teaching &amp; Highlights</h3>
+                <ul class="teaching-list">
                     <li>
                         <strong>Lecturer, Department of Civil Engineering, Uttara University</strong> (Jan 2024 – present):<br>
-                        Deliver lectures and practical sessions in civil engineering and support departmental exam logistics
-                        and automation.
+                        Deliver lectures and practical sessions in civil engineering and support departmental
+                        exam logistics and automation.
                     </li>
                     <li>
-                        <strong>Recognition for Excellence in Developing Transformative Solution for Exam Seat Planning</strong> –
-                        awarded by the Department of Civil Engineering, Uttara University, for developing the automated exam
-                        seat planning system.
+                        <strong>Recognition for Excellence in Developing Transformative Solution for Exam Seat Planning</strong> – awarded
+                        by the Department of Civil Engineering, Uttara University, for developing the automated exam seat planning system.
                     </li>
                     <li>
                         <strong>Statistical Learning with Python – Stanford Online</strong>: completed a verified course covering
                         linear regression, classification, tree-based methods, SVMs, deep learning, and unsupervised learning.
                     </li>
                     <li>
-                        <strong>B.Sc. in Civil Engineering (Transportation Engineering), BUET</strong>, July 2024 –
-                        CGPA 3.74 out of 4.00.
+                        <strong>B.Sc. in Civil Engineering (Transportation Engineering), BUET</strong>, July 2024 – CGPA 3.74 out of 4.00.
                     </li>
                 </ul>
             </section>
@@ -539,7 +809,7 @@
             <!-- Optional: Latest News -->
             <section class="content-section">
                 <h3>Latest News</h3>
-                <ul>
+                <ul class="news-list">
                     <li>July 2024 – Completed B.Sc. in Civil Engineering (Transportation Engineering major) at BUET.</li>
                     <li>February 2024 – Co-authored and presented a paper on freight generation models at ICCESD 2024.</li>
                     <li>2023–2024 – Automated exam seat planning adopted by Uttara University for department-wide use.</li>
@@ -560,7 +830,8 @@
         <script type="text/javascript">
             (function () {
                 var lastModDate = new Date(document.lastModified);
-                var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
                 var formattedDate = months[lastModDate.getMonth()] + ' ' +
                     lastModDate.getDate() + ', ' + lastModDate.getFullYear();
                 document.write(formattedDate);
