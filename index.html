@@ -29,6 +29,24 @@
             padding-top: 1rem;
         }
 
+        /* Projects-only view */
+        body.projects-view .sidebar-col {
+            display: none !important;
+        }
+
+        body.projects-view .main-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        body.projects-view .main-col > section:not(#projects) {
+            display: none;
+        }
+
+        #projects {
+            scroll-margin-top: 90px;
+        }
+
         .profile-sidebar {
             border-radius: 12px;
             padding: 1.5rem 1.6rem;
@@ -44,7 +62,6 @@
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            /* shift framing slightly down so hair is visible */
             object-position: 50% 20%;
         }
 
@@ -99,10 +116,10 @@
         .content-section {
             margin-bottom: 2.8rem;
         }
+
         #about p {
             text-align: justify;
         }
-
 
         .content-section h3 {
             margin-bottom: 1rem;
@@ -111,9 +128,10 @@
         .content-section p {
             font-size: 0.98rem;
         }
+
         .profile-sidebar p,
         .profile-sidebar li {
-        font-size: 0.98rem;
+            font-size: 0.98rem;
         }
 
         .project-card {
@@ -126,6 +144,7 @@
             flex-direction: column;
             height: 100%;
         }
+
         #projects .row:not(:last-child) {
             margin-bottom: 1.5rem;
         }
@@ -151,7 +170,7 @@
             border-radius: 10px;
             display: block;
             max-height: 230px;
-            object-fit: contain; /* show full image */
+            object-fit: contain;
             background: #000;
         }
 
@@ -188,6 +207,7 @@
             text-align: center;
             color: #777;
         }
+
         /* Make navbar text visible on dark background */
         .navbar.navbar-dark .navbar-brand .title,
         .navbar.navbar-dark .nav-link {
@@ -202,7 +222,6 @@
         .navbar.navbar-dark .nav-link.active {
             font-weight: 600;
         }
-
 
         /* Dark mode */
         body.dark-mode {
@@ -288,6 +307,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto align-items-center">
                 <li class="nav-item">
@@ -315,7 +335,7 @@
 <div class="container main-layout">
     <div class="row">
         <!-- LEFT SIDEBAR -->
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-4 mb-4 sidebar-col">
             <aside class="profile-sidebar text-center text-lg-left">
                 <div class="mb-3 text-center">
                     <img src="assets/imgs/sakif-profile.jpg"
@@ -326,7 +346,7 @@
                 <h1 class="profile-name">S M Sakif Shahriyar</h1>
                 <p class="profile-title mb-1">Lecturer, Civil Engineering</p>
                 <p class="mb-1">Uttara University, Dhaka, Bangladesh</p>
-                
+
                 <div class="sidebar-section-title mt-3">Education</div>
                 <ul class="sidebar-list">
                     <li>
@@ -335,19 +355,18 @@
                     </li>
                 </ul>
 
-                
                 <div class="profile-contact">
                     <div>Mirpur, Dhaka 1216, Bangladesh</div>
                     <div>Email: <a href="mailto:smsakifshahriyar@gmail.com">smsakifshahriyar@gmail.com</a></div>
                     <div>WhatsApp: <a href="tel:+8801759100956">+880 1759 100 956</a></div>
                 </div>
-                
+
                 <div class="buttons pt-3 text-center text-lg-left">
                     <a href="assets/files/CV_Sakif Shahriyar.pdf" target="_blank" rel="noopener">
                         <button class="btn btn-dark rounded btn-sm">View CV</button>
                     </a>
                 </div>
-                
+
                 <div class="socials mt-3 d-flex justify-content-center justify-content-lg-start">
                     <a class="social-item" href="mailto:smsakifshahriyar@gmail.com">
                         <i class="ti-email"></i>
@@ -356,7 +375,7 @@
                         <i class="ti-github"></i>
                     </a>
                 </div>
-                
+
                 <div class="sidebar-section-title">Research Interests</div>
                 <ul class="sidebar-list">
                     <li>ITS</li>
@@ -365,12 +384,11 @@
                     <li>Traffic operations and signal control</li>
                     <li>Statistical modelling</li>
                 </ul>
-
             </aside>
         </div>
 
         <!-- RIGHT MAIN CONTENT -->
-        <div class="col-lg-8">
+        <div class="col-lg-8 main-col">
 
             <!-- About -->
             <section class="content-section" id="about">
@@ -382,10 +400,11 @@
                     </a>,
                     in July 2024 and currently work as a Lecturer in Civil Engineering at Uttara University, Dhaka.
                     I am seeking fully funded PhD opportunities in transportation engineering, with research interests
-                    in intelligent transportation systems, CAVs, signal control, statistical modelling. My recent work uses computer vision and machine learning on street-level video to study 
+                    in intelligent transportation systems, CAVs, signal control, statistical modelling. My recent work uses computer vision and machine learning on street-level video to study
                     pedestrian intent, safety-related interactions at intersections, and mixed urban traffic.
                 </p>
             </section>
+
             <!-- Certification -->
             <section class="content-section" id="certification">
                 <h3>Certification</h3>
@@ -402,7 +421,7 @@
                 </ul>
             </section>
 
-            <!-- Projects (all in one section) -->
+            <!-- Projects -->
             <section class="content-section" id="projects">
                 <h3>Projects</h3>
 
@@ -443,7 +462,6 @@
                 </div>
 
                 <div class="row">
-                    <!-- Traffic Incident Reporting -->
                     <div class="col-md-12">
                         <div class="card project-card">
                             <div class="card-body">
@@ -481,7 +499,6 @@
                 </div>
 
                 <div class="row">
-                    <!-- Pedestrian Crossing Intent -->
                     <div class="col-md-6">
                         <div class="card project-card">
                             <div class="card-body">
@@ -496,11 +513,11 @@
                                     </video>
                                 </div>
                                 <p class="card-text">
-                                    While many recent approaches to pedestrian crossing intention rely on large, 
-                                    end-to-end deep models trained on dedicated intent datasets, this prototype 
+                                    While many recent approaches to pedestrian crossing intention rely on large,
+                                    end-to-end deep models trained on dedicated intent datasets, this prototype
                                     explores a lightweight alternative: YOLOv8 + BYTETrack tracking,
-                                    ego-motion-corrected geometric features, and heuristic fusion 
-                                    (with optional pose and road-segmentation cues) to produce interpretable 
+                                    ego-motion-corrected geometric features, and heuristic fusion
+                                    (with optional pose and road-segmentation cues) to produce interpretable
                                     SAFE / APPROACHING / CROSSING states on dashcam video.
                                 </p>
                                 <div class="project-links">
@@ -519,7 +536,6 @@
                         </div>
                     </div>
 
-                    <!-- Surrogate Safety Analysis -->
                     <div class="col-md-6">
                         <div class="card project-card">
                             <div class="card-body">
@@ -556,9 +572,7 @@
                     </div>
                 </div>
 
-                <!-- Row 2 -->
                 <div class="row">
-                    <!-- Dhaka Traffic Detection -->
                     <div class="col-md-6">
                         <div class="card project-card">
                             <div class="card-body">
@@ -591,7 +605,6 @@
                         </div>
                     </div>
 
-                    <!-- Seat Plan System (generator + web app combined) -->
                     <div class="col-md-6">
                         <div class="card project-card">
                             <div class="card-body">
@@ -605,11 +618,11 @@
                                 </div>
                                 <p class="card-text">
                                     Developed an automated exam seating system for Uttara University that
-                                    parses raw exam and student data, applies adjacency and restriction 
-                                    rules, and generates seat plans and PDFs for thousands of students 
+                                    parses raw exam and student data, applies adjacency and restriction
+                                    rules, and generates seat plans and PDFs for thousands of students
                                     each session, all accessible through a simple Flask web app.
                                 </p>
-                               
+
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
                                        href="https://github.com/SMSakifShahriyar/seatplan_webapp"
@@ -627,9 +640,7 @@
                     </div>
                 </div>
 
-                <!-- Row 3 -->
                 <div class="row">
-                    <!-- MNIST NN -->
                     <div class="col-md-6">
                         <div class="card project-card">
                             <div class="card-body">
@@ -655,7 +666,6 @@
                         </div>
                     </div>
 
-                    <!-- Mars Site Selector -->
                     <div class="col-md-6">
                         <div class="card project-card">
                             <div class="card-body">
@@ -666,8 +676,8 @@
                                          class="project-cover">
                                 </div>
                                 <p class="card-text">
-                                    Developed tools to evaluate Mars Orbiter Laser Altimeter (MOLA) digital elevation models for potential landing 
-                                    sites: scanning and scoring low-relief zones, visualizing candidates on color maps, and generating elevation profiles 
+                                    Developed tools to evaluate Mars Orbiter Laser Altimeter (MOLA) digital elevation models for potential landing
+                                    sites: scanning and scoring low-relief zones, visualizing candidates on color maps, and generating elevation profiles
                                     using NumPy, OpenCV, Matplotlib, and Tkinter
                                 </p>
                                 <div class="project-links">
@@ -682,9 +692,7 @@
                     </div>
                 </div>
 
-                <!-- Row 4 -->
                 <div class="row">
-                    <!-- Bayesian Search & Rescue -->
                     <div class="col-md-6">
                         <div class="card project-card">
                             <div class="card-body">
@@ -695,8 +703,8 @@
                                          class="project-cover">
                                 </div>
                                 <p class="card-text">
-                                    Created an interactive Bayesian search simulator that models sequential area searches on a map, applying probabilistic 
-                                    updates based on forecast and realized effectiveness and running Monte Carlo simulations (up to 10,000 iterations) 
+                                    Created an interactive Bayesian search simulator that models sequential area searches on a map, applying probabilistic
+                                    updates based on forecast and realized effectiveness and running Monte Carlo simulations (up to 10,000 iterations)
                                     to compare search strategies, using Python with NumPy and OpenCV.
                                 </p>
                                 <div class="project-links">
@@ -710,7 +718,6 @@
                         </div>
                     </div>
 
-                    <!-- Housing Price Modeling -->
                     <div class="col-md-6">
                         <div class="card project-card">
                             <div class="card-body">
@@ -721,8 +728,8 @@
                                          class="project-cover">
                                 </div>
                                 <p class="card-text">
-                                    Built and evaluated linear regression models for housing prices on a large sales dataset, with feature engineering 
-                                    (location, interactions, time effects) and model validation (cross-validation, RMSE, R^2) in Python (scikit-learn, 
+                                    Built and evaluated linear regression models for housing prices on a large sales dataset, with feature engineering
+                                    (location, interactions, time effects) and model validation (cross-validation, RMSE, R^2) in Python (scikit-learn,
                                     statsmodels).
                                 </p>
                                 <div class="project-links">
@@ -737,9 +744,7 @@
                     </div>
                 </div>
 
-                <!-- Row 5 (single card) -->
                 <div class="row">
-                    <!-- Earthwork Cut-Fill Calculator -->
                     <div class="col-md-6">
                         <div class="card project-card">
                             <div class="card-body">
@@ -750,8 +755,8 @@
                                          class="project-cover">
                                 </div>
                                 <p class="card-text">
-                                    Designed a command-line tool to compute earthwork volumes using average-height, trapezoidal, and prismoidal 
-                                    methods, with support for multi-segment grades, unit selection, and basic data visualization, developed in MATLAB. 
+                                    Designed a command-line tool to compute earthwork volumes using average-height, trapezoidal, and prismoidal
+                                    methods, with support for multi-segment grades, unit selection, and basic data visualization, developed in MATLAB.
                                 </p>
                                 <div class="project-links">
                                     <a class="btn btn-sm btn-outline-primary"
@@ -789,7 +794,6 @@
                 </ul>
             </section>
 
-
             <!-- Recent Highlights -->
             <section class="content-section" id="highlights">
                 <h3>Recent Highlights</h3>
@@ -817,8 +821,6 @@
                     </li>
                 </ul>
             </section>
-
-
 
         </div>
     </div>
@@ -853,10 +855,19 @@
 <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
 <script src="assets/js/steller.js"></script>
+
 <script>
     function darkmode() {
         document.body.classList.toggle("dark-mode");
     }
+
+    function updatePageMode() {
+        var isProjectsView = window.location.hash === "#projects";
+        document.body.classList.toggle("projects-view", isProjectsView);
+    }
+
+    window.addEventListener("load", updatePageMode);
+    window.addEventListener("hashchange", updatePageMode);
 
     (function () {
         var y = new Date().getFullYear();
